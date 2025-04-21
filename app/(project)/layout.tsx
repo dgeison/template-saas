@@ -1,5 +1,5 @@
 // import type { Metadata } from "next";
-
+import { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 
@@ -8,6 +8,11 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
+export const metadata: Metadata = {
+  title: "Template SaaS",
+  description: "Landing page",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -15,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${poppins.className}  bg-gray-400 antialiased`}>
+      <body className={`${poppins.className} bg-gray-100 antialiased`}>
         {children}
       </body>
     </html>
